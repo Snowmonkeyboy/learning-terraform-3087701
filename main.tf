@@ -33,7 +33,7 @@ module "blog_autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "6.5.2"
 
-  name = "${var.environment.nameblog}-blog"
+  name = "${var.environment.name}-blog"
 
   min_size            = var.asg_min_size
   max_size            = var.asg_max_size
@@ -48,7 +48,7 @@ module "blog_alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 6.0"
 
-  name = "${var.environment.nameblog}-alb"
+  name = "${var.environment.name}-alb"
 
   load_balancer_type = "application"
 
